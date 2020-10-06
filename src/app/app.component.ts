@@ -27,6 +27,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.githubService.getData(this.username).subscribe((data) => {
       this.profile = data
+      console.log (data)
     })
     this.githubService.getRepos(this.username).subscribe((data) => {
       console.log(data)
