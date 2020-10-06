@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
       this.repos = data
     })
   }
-  searchUser() {
+  search() {
     this.username = this.searchText;
     this.ngOnInit()
   }

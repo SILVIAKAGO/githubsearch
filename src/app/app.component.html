@@ -7,9 +7,64 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" name="search" placeholder="Search User" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <div class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" name="search"[(ngModel)]="searchText" placeholder="Search User" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" (click)="search()">Search</button>
+    </div>
   </div>
 </nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4  p-5">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+          <img class="rounded-circle" width="250px" src="{{profile.avatar_url}}">
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12 d-flex justify-content-center p-1">
+          Username: {{profile.login}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center p-1">
+          Location: {{profile.location}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center p-1">
+          Joined: {{profile.created_at|date}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center p-1">
+          Following: {{profile.followers}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center p-1">
+          Followers: {{profile.following}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center p-1">
+          Bio: {{profile.bio}}
+        </div>
+      </div>
+    </div>
+    <div class="col-8 custom">
+      <div class="card text-center my-2"  *ngFor="let repo of repos">
+        <div class="card-header">
+          {{repo.name}}
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{repo.description}}</p>
+          <a href="{{repo.html_url}}" class="btn btn-primary">Learn More</a>
+        </div>
+        <div class="card-footer text-muted">
+          {{repo.created_at|date}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
