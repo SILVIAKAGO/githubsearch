@@ -11,11 +11,11 @@ private username: String
     this.username ='SILVIAKAGO'
    }
   getData(x) {
-    const url ="https://api.github.com/users/"+x +"?api_key="+environment;
+    const url ="https://api.github.com/users/"+x +"?api_key="+environment.apikey;
     return this.http.get<any>(url)
   }
   getRepos (x){
-    const url ="https://api.github.com/users/"+ x +"/repos?api_key="+environment;
+    const url ="https://api.github.com/users/"+ x +"/repos?api_key="+environment.apikey;
     return this.http.get<any>(url)
   }
   }

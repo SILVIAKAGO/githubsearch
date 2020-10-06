@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
     bio: '',
     created_at: ''
   };
-  username: String = "pwambui2020"
+  username: String = "SILVIAKAGO"
   searchText: String;
   repos: any[]
   users: String[]
